@@ -191,23 +191,100 @@
   > .control-bar {
     width: 100%;
     background-color: rgb(29, 29, 28);
-    height: 10rem;
+    height: 6.75rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 
     > .space {
+      max-width: 62.5rem;
       width: 62.5rem;
       height: 100%;
-      background-color: red;
-
+      background-color: rgb(29, 29, 28);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
 
       > .icon-box {
-        height: 9rem;
-        width: 9rem;
+        height: 5rem;
+        width: 5rem;
         background-color: rgb(51, 51, 51);
         border: 0.1rem solid #d4d3c9;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        >.arrows{
+          box-sizing: border-box;
+          height: 3rem;
+          width: 3rem;
+          & span{
+          font-weight: 700;
+          }
+
+        }
+      }
+      > div{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0.2rem;
+        padding: 0.5rem 0;
+        height: 100%;
+        font-size: 0.75rem;
+        font-weight: 400;
+        text-align: left;
+        &.title{
+          width: 7.5rem;
+          border-right: 0.1rem solid rgb(51, 51, 51);
+        }
+        &.theater-title{
+          width: 2.5rem;
+        }
+        &.theater-content{
+          width: 9.125rem;
+          border-right: 0.1rem solid rgb(51, 51, 51);
+        }
+        &.seat-title{
+          width: 3rem;
+        }
+        &.seat-content{
+          width: 9.125rem;
+          border-right: 0.1rem solid rgb(51, 51, 51);
+        }
+        &.price-title{
+          width: 2.5rem;
+        }
+        &.price-content{
+          width: 9.125rem;
+        }
+
+        > span{
+          text-decoration: none;
+          text-overflow: ellipsis;
+          color: #cccccc;
+          height: 1.5rem;
+          text-decoration-color: rgb(204, 204, 204);
+          font-weight : 700;
+          font-size: 0.75rem;
+          &.poster{
+            height: 6.5rem;
+            width: 4.625rem;
+            display: flex;
+            background-color: white;
+          }
+        }
       }
     }
   }

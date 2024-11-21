@@ -89,14 +89,55 @@
     </form>
     <section class="control-bar">
         <div class="space">
-            <div class="icon-box">
-                <span class="icon-before"></span>
+            <button type="submit" class="icon-box">
+                <img alt="왼쪽검은색" th:src="@{'/seats/assets/images/leftblack.png'}" class="arrows left-black">
+                <img alt="왼쪽빨간색" th:src="@{'/seats/assets/images/leftred.png'}" class="arrows left-red"
+                     style="display: none">
                 <span>영화선택</span>
+            </button>
+            <div>
+                <span class="poster"></span>
             </div>
-            <div class="icon-box">
-                <span class="after"></span>
+            <div class="title">
+                <span>
+                    <a>제목</a>
+                </span>
+                <span>2D</span>
+                <span>연령제한</span>
+            </div>
+            <div class="theater-title">
+                <span>극장</span>
+                <span>일시</span>
+                <span>상영관</span>
+                <span>인원</span>
+            </div>
+            <div class="theater-content">
+                <span><a>CGV 등촌</a></span>
+                <span>2024.01.01(월) 16:43</span>
+                <span>3관 5층</span>
+                <span>일반7명</span>
+            </div>
+            <div class="seat-title">
+                <span>좌석명</span>
+                <span>좌석번호</span>
+            </div>
+            <div class="seat-content">
+            </div>
+            <div class="price-title">
+                <span>일반</span>
+                <span>총금액</span>
+            </div>
+            <div class="price-content">
+                <span>14,000원 X 2</span>
+                <span
+                >28,000원</span>
+            </div>
+            <button type="submit" class="icon-box">
+                <img alt="왼쪽검은색" th:src="@{'/seats/assets/images/rightblack.png'}" class="arrows right-black">
+                <img alt="왼쪽빨간색" th:src="@{'/seats/assets/images/rightred.png'}" class="arrows right-red"
+                     style="display: none">
                 <span>결제선택</span>
-            </div>
+            </button>
         </div>
     </section>
 </main>
