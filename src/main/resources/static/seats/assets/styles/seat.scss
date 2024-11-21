@@ -1,0 +1,214 @@
+@charset "utf-8";
+
+#main {
+  > .seatform {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 62.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f2f0e5;
+    box-sizing: border-box;
+
+    .content {
+      text-align: center;
+      background-color: rgb(51, 51, 51);
+      color: #d4d3c9;
+      font-weight: 400;
+      height: 2rem;
+      width: 100%;
+      padding: 0 0.09rem;
+
+    }
+
+    .screen-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      border: 0.1rem solid #d4d3c9;
+
+      .imfor-container {
+        margin: 1rem;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 7.5rem;
+
+        &#nopContainer {
+          border-right: 1px solid #d4d3c9;
+        }
+
+        #maximum_people {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: flex-end;
+          font-size: 0.6875rem;
+          padding-right: 1rem;
+          box-sizing: border-box;
+          color: rgb(255, 0, 0);
+        }
+
+        .title-container {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 0.2rem;
+          box-sizing: border-box;
+
+          .title {
+            width: 3rem;
+          }
+
+          .adult {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            list-style-type: none;
+            gap: 0.3rem;
+            box-sizing: border-box;
+
+            .selected {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              border: 1px solid #d6d3ce;
+              width: 1rem;
+              height: 1rem;
+              font-size: 0.875rem;
+              font-weight: 700;
+
+              > .radio {
+                display: none;
+
+                & .-adult {
+                  color: rgb(51, 51, 51);
+                  text-decoration: none;
+                  cursor: pointer;
+                }
+              }
+            }
+
+            > .selected:has(.radio:checked) {
+              background-color: rgb(51, 51, 51);
+              color: rgb(255, 255, 255);
+            }
+          }
+        }
+
+        .text {
+          padding: 0 0.3rem;
+        }
+
+        .cinema {
+          border-right: 0.025rem solid #d4d3c9;
+          border-left: 0.025rem solid #d4d3c9;
+        }
+
+        .seat-color {
+          color: red;
+        }
+      }
+
+
+      > .seat-container {
+        width: 55rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 5rem;
+
+        > .screen-bar {
+          margin-top: 2rem;
+          margin-bottom: 4rem;
+          width: 40rem;
+          background-color: #d4d3c9;
+          text-align: center;
+        }
+
+        > .screen {
+          th, td {
+            text-align: center;
+            background-color: #d4d3c9;
+            border: none;
+            width: 1rem;
+            height: 1rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+
+            &.selected-seat {
+              background-color: red;
+            }
+
+          }
+        }
+
+      }
+
+      > .plus {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-bottom: 5rem;
+
+        > span {
+          gap: 0.1rem;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+
+          > .icon {
+            display: flex;
+            width: 1rem;
+            height: 1rem;
+
+            &.icon1 {
+              background-color: red;
+            }
+
+            &.icon2 {
+              background-color: #d4d3c9;
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  > .control-bar {
+    width: 100%;
+    background-color: rgb(29, 29, 28);
+    height: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    > .space {
+      width: 62.5rem;
+      height: 100%;
+      background-color: red;
+
+
+      > .icon-box {
+        height: 9rem;
+        width: 9rem;
+        background-color: rgb(51, 51, 51);
+        border: 0.1rem solid #d4d3c9;
+      }
+    }
+  }
+}

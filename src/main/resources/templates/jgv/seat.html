@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" th:href="@{'/common.css'}">
+    <link rel="stylesheet" type="text/css" th:href="@{'/seats/assets/styles/seat.css'}">
+    <script defer th:src="@{'/seats/assets/scripts/seat.js'}"></script>
+
+    <title>좌석선택</title>
+</head>
+<body>
+<main id="main">
+    <form class="seatform">
+        <div class="content">인원/좌석</div>
+        <div class="screen-container">
+            <div class="imfor-container" id="nopContainer">
+                <span id="maximum_people">* 최대 8명 선택 가능</span>
+                <div class="title-container">
+                    <span class="title">일반</span>
+                    <label class="adult">
+                        <label class="selected selected0">
+                            <input class="radio" name="number" type="radio" value="0">
+                            <span id="-adult adult0">0</span>
+                        </label>
+                        <label class="selected selected1">
+                            <input class="radio" name="number" type="radio" value="1">
+                            <span id="-adult adult1">1</span>
+                        </label>
+                        <label class="selected selected2">
+                            <input class="radio" name="number" type="radio" value="2">
+                            <span id="-adult adult2">2</span>
+                        </label>
+                        <label class="selected selected3">
+                            <input class="radio" name="number" type="radio" value="3">
+                            <span id="-adult adult3">3</span>
+                        </label>
+                        <label class="selected selected4">
+                            <input class="radio" name="number" type="radio" value="4">
+                            <span id="-adult adult4">4</span>
+                        </label>
+                        <label class="selected selected5">
+                            <input class="radio" name="number" type="radio" value="5">
+                            <span id="-adult adult5">5</span>
+                        </label>
+                        <label class="selected selected6">
+                            <input class="radio" name="number" type="radio" value="6">
+                            <span id="-adult adult6">6</span>
+                        </label>
+                        <label class="selected selected7">
+                            <input class="radio" name="number" type="radio" value="7">
+                            <span id="-adult adult7">7</span>
+                        </label>
+                        <label class="selected selected8">
+                            <input class="radio" name="number" type="radio" value="8">
+                            <span id="-adult adult8">8</span>
+                        </label>
+                    </label>
+                </div>
+            </div>
+            <div class="imfor-container">
+                <div class="title-container">
+                    <span class="text">지역</span>
+                    <span class="text">관</span>
+                    <span class="text">남은 좌석 <b class="seat-color">000</b>/110</span>
+                </div>
+                <div class="title-container">
+                    <b class="">0000.00.00</b>
+                    <b class="">(월)</b>
+                    <b class="">00:00 ~ 00:00</b>
+                </div>
+            </div>
+
+        </div>
+        <div class="screen-container">
+            <div class="seat-container">
+                <div class="screen-bar">SCREEN</div>
+                <div class="screen" id="screen">
+                </div>
+            </div>
+            <div class="plus">
+                <span><span class="icon icon1"></span>선 택</span>
+                <span><span class="icon icon2"></span>예매 가능 좌석</span>
+                <span><img alt="" src="/seats/assets/images/icon3.png" class="icon icon2">선택 불가</span>
+            </div>
+        </div>
+    </form>
+    <section class="control-bar">
+        <div class="space">
+            <div class="icon-box">
+                <span class="icon-before"></span>
+                <span>영화선택</span>
+            </div>
+            <div class="icon-box">
+                <span class="after"></span>
+                <span>결제선택</span>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>
