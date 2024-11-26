@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jykim.cgv.mappers.CinemaMapper">
+    <insert id="insertCinema">
+        insert into `jgv`.`cinema`(`ci_num`, `ci_name`,
+                                   `th_num`, `cit_num`)
+        values (#{ciNum}, #{ciName}, #{thNum}, #{citNum});
+    </insert>
+    <select id="selectCinemaByCiNum" resultType="com.jykim.cgv.entities.CinemaEntity">
+        select `ci_num` as `ciNum`,
+               `ci_name` as `ciName`,
+               `th_num` as `thNum`,
+               `cit_num` as `cit_num`
+        from `jgv`.`cinema`
+        where `ci_num` = #{ciNum}
+    </select>
+</mapper>

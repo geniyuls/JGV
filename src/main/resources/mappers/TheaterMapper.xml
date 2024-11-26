@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jykim.cgv.mappers.TheaterMapper">
+
+    <insert id="insertTheater" parameterType="com.jykim.cgv.entities.TheaterEntity">
+        insert into `jgv`.`theater`(`th_num`, `th_name`, `th_addr`) VALUES (${thNum}, ${thName}, ${thAddr})
+    </insert>
+    <select id="selectTheaterByThNum" resultType="com.jykim.cgv.entities.TheaterEntity">
+        select `th_num` as `thNum`, `th_name` as `thName`, `th_addr` as `thAddrs`
+        from `jgv`.`theater`
+        where `th_num` = #{thNum}
+
+    </select>
+</mapper>

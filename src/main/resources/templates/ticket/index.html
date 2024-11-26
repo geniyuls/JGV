@@ -5,18 +5,30 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" th:href="@{'/common.css'}">
-    <link rel="stylesheet" type="text/css" th:href="@{'/seats/assets/styles/seat.css'}">
-    <script defer th:src="@{'/seats/assets/scripts/seat.js'}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{'/ticket/assets/styles/index.css'}">
+    <link rel="stylesheet" type="text/css" th:href="@{'../../fragments/assets/styles/index.css'}">
+    <link rel="stylesheet" type="text/css" th:href="@{'../../fragments/assets/styles/common.css'}">
+    <script defer th:src="@{'/ticket/assets/scripts/index.js'}"></script>
 
     <title>좌석선택</title>
 </head>
 <body>
-<main id="main">
+<th:block th:replace="~{fragments/common.html :: advertisement}"></th:block>
+<th:block th:replace="~{fragments/common.html :: header}"></th:block>
+<th:block th:replace="~{fragments/common.html :: nav}"></th:block>
+<main id="main-seat">
     <form class="seatform">
+        <div class="content-bar">
+            <a class="content-bar-timetable" href="#">
+                <img class="image" alt="상영시간표" th:src="@{'/ticket/assets/images/titmetable.png'}">
+                &nbsp 상영 시간표</a>
+            <a class="content-bar-retry" href="#">
+                <img class="image" alt="예매다시하기" th:src="@{'/ticket/assets/images/retry.png'}">
+                &nbsp 예매 다시하기</a>
+        </div>
         <div class="content">인원/좌석</div>
         <div class="screen-container">
-            <div class="imfor-container" id="nopContainer">
+            <div class="infor-container" id="nopContainer">
                 <span id="maximum_people">* 최대 8명 선택 가능</span>
                 <div class="title-container">
                     <span class="title">일반</span>
@@ -60,21 +72,21 @@
                     </label>
                 </div>
             </div>
-            <div class="imfor-container">
+            <div class="infor-container title-right-box">
                 <div class="title-container">
-                    <span class="text">지역</span>
-                    <span class="text">관</span>
-                    <span class="text">남은 좌석 <b class="seat-color">000</b>/110</span>
+                    <span class="text" th:text="${theater.getThName()}"></span>
+                    <span class="text center" th:text="${cinema.getCiName()}"></span>
+                    <span class="text" th:text="${'남은 좌석'}">남은 좌석 <b class="seat-color">000</b>/110</span>
                 </div>
                 <div class="title-container">
-                    <b class="">0000.00.00</b>
-                    <b class="">(월)</b>
-                    <b class="">00:00 ~ 00:00</b>
+                    <b class="big-text data">0000.00.00</b>
+                    <b class="big-text day">(월)</b>
+                    <b class="big-text time">00:00 ~ 00:00</b>
                 </div>
             </div>
 
         </div>
-        <div class="screen-container">
+        <div class="screen-container screen-down">
             <div class="seat-container">
                 <div class="screen-bar">SCREEN</div>
                 <div class="screen" id="screen">
@@ -83,15 +95,15 @@
             <div class="plus">
                 <span><span class="icon icon1"></span>선 택</span>
                 <span><span class="icon icon2"></span>예매 가능 좌석</span>
-                <span><img alt="" src="/seats/assets/images/icon3.png" class="icon icon2">선택 불가</span>
+                <span><img alt="" src="/ticket/assets/images/icon3.png" class="icon icon2">선택 불가</span>
             </div>
         </div>
     </form>
     <section class="control-bar">
         <div class="space">
             <button type="submit" class="icon-box">
-                <img alt="왼쪽검은색" th:src="@{'/seats/assets/images/leftblack.png'}" class="arrows left-black">
-                <img alt="왼쪽빨간색" th:src="@{'/seats/assets/images/leftred.png'}" class="arrows left-red"
+                <img alt="왼쪽검은색" th:src="@{'/ticket/assets/images/leftblack.png'}" class="arrows left-black">
+                <img alt="왼쪽빨간색" th:src="@{'/ticket/assets/images/leftred.png'}" class="arrows left-red"
                      style="display: none">
                 <span>영화선택</span>
             </button>
@@ -112,10 +124,9 @@
                 <span>인원</span>
             </div>
             <div class="theater-content">
-                <span><a>CGV 등촌</a></span>
+                <span><a th:text="${theater.getThName()}"></a></span>
                 <span>2024.01.01(월) 16:43</span>
-                <span>3관 5층</span>
-                <span>일반7명</span>
+                <span th:text="${cinema.getCiName()}"></span>
             </div>
             <div class="seat-title">
                 <span>좌석명</span>
@@ -133,13 +144,15 @@
                 >28,000원</span>
             </div>
             <button type="submit" class="icon-box">
-                <img alt="왼쪽검은색" th:src="@{'/seats/assets/images/rightblack.png'}" class="arrows right-black">
-                <img alt="왼쪽빨간색" th:src="@{'/seats/assets/images/rightred.png'}" class="arrows right-red"
+                <img alt="왼쪽검은색" th:src="@{'/ticket/assets/images/rightblack.png'}" class="arrows right-black">
+                <img alt="왼쪽빨간색" th:src="@{'/ticket/assets/images/rightred.png'}" class="arrows right-red"
                      style="display: none">
                 <span>결제선택</span>
             </button>
         </div>
     </section>
+
 </main>
+<th:block th:replace="~{fragments/common.html :: footer}"></th:block>
 </body>
 </html>

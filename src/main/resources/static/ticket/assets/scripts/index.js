@@ -1,23 +1,22 @@
-const $main = document.getElementById("main");
+const $mainSeat = document.getElementById("main-seat");
 let t = 0;
 let m = 0;
-const $seatContent = $main.querySelector(':scope > .control-bar > .space > .seat-content');
+const $seatContent = $mainSeat.querySelector(':scope > .control-bar > .space > .seat-content');
 const $seatCommon = document.createElement('span');
 $seatCommon.className = 'seat-common';
 $seatContent.appendChild($seatCommon);
+
+const $theaterContent = $mainSeat.querySelector(':scope > .control-bar > .space > .theater-content');
+const $seatHuman = document.createElement('span');
+$seatHuman.className = 'seat-human';
+$theaterContent.appendChild($seatHuman);
+
 
 
 const adults = document.querySelectorAll('.radio');
 const seats = [];
 
-adults.forEach((radio) => {
-    radio.addEventListener('change', () => {
-        t = parseInt(radio.value);
-        m = parseInt(radio.value);
-        $seatCommon.textContent = '일반석';
 
-    });
-});
 
 const table = document.createElement('table');
 table.className = 'table';
@@ -46,6 +45,8 @@ if (screen) {
 const $seatNumber = document.createElement('span');
 $seatNumber.className = 'seat-number';
 $seatContent.appendChild($seatNumber);
+
+
 let selectedSeats = [];
 
 seats.forEach((seat) => {
@@ -65,8 +66,48 @@ seats.forEach((seat) => {
                         selectedSeats.splice(index, 1);
                     }
                     $seatNumber.textContent = `${selectedSeats.join(', ')}`;
+                // else if (seat.classList.contains('selected-seat')) {
+                //         t++;
+                //         seat.classList.remove('selected-seat');
+                //         const index = selectedSeats.indexOf(seat.id);
+                //         if (index !== -1) {
+                //             selectedSeats.splice(index, 1);
+                //         }
+                //         $seatNumber.textContent = `${selectedSeats.join(', ')}`;
                 }
             }
         }
     })
+});
+let selectedHuman = [];
+
+adults.forEach((radio) => {
+    radio.addEventListener('change', () => {
+        t = parseInt(radio.value);
+        m = parseInt(radio.value);
+        if (radio.value !== '0') {
+            $seatCommon.textContent = '일반석';
+            selectedHuman.push(`일반 ${(radio.value)}명`);
+            $seatHuman.textContent = `${selectedHuman.join(', ')}`;
+
+
+        } else{
+            $seatCommon.textContent = ''
+            selectedHuman.push(`일반 ${(radio.value)}명`);
+            $seatHuman.textContent = `${selectedHuman.join(', ')}`;
+        }
+
+
+
+        seats.forEach((seat) => {
+            seat.classList.remove('selected-seat');
+            const index = selectedHuman.indexOf(`일반 ${(radio.value)}명`);
+            if (index !== -1) {
+                selectedHuman.splice(index, 1);
+            }
+        });
+        selectedSeats = [];
+        $seatNumber.textContent = '';
+
+    });
 });

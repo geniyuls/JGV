@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-#main {
+#main-seat {
   > .seatform {
     left: 50%;
     transform: translate(-50%, 0);
@@ -9,10 +9,49 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #f2f0e5;
     box-sizing: border-box;
 
+    .content-bar {
+      text-align: center;
+      color: rgb(51, 51, 51);
+      font-weight: 400;
+      height: 4.625rem;
+      width: 100%;
+      padding: 0 0.09rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 0.5rem;
+
+
+      > .content-bar-timetable, .content-bar-retry{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 1.875rem;
+        width: 7rem;
+        color: rgb(51, 51, 51);
+        background-color: #f2f0e5;
+        border: 1px solid rgb(51, 51, 51);
+        border-radius: 0.3rem;
+        font-weight: 600;
+        font-size: 0.75rem;
+
+        > .image{
+          height: 1.2rem;
+        }
+
+      }
+    }
+
     .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       background-color: rgb(51, 51, 51);
       color: #d4d3c9;
@@ -28,14 +67,25 @@
       flex-direction: row;
       width: 100%;
       border: 0.1rem solid #d4d3c9;
+      background-color: #f2f0e5;
+      height: auto;
+      &.screen-down{
+        height: 24.0625rem;
 
-      .imfor-container {
+      }
+
+
+      .infor-container {
         margin: 1rem;
         width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        height: 7.5rem;
+        height: auto;
+
+        &.title-right-box{
+          gap: 1rem;
+        }
 
         &#nopContainer {
           border-right: 1px solid #d4d3c9;
@@ -62,6 +112,23 @@
           gap: 0.2rem;
           box-sizing: border-box;
 
+          > .text{
+            width: auto;
+            height: 1rem;
+            font-size: 0.75rem;
+            padding: 0 0.5rem;
+
+            &.center{
+              border-right: 1px solid #d4d3c9 ;
+              border-left: 1px solid #d4d3c9;
+            }
+          }
+
+          > .big-text{
+            font-weight: 700;
+            font-size: 1.28rem;
+          }
+
           .title {
             width: 3rem;
           }
@@ -81,10 +148,11 @@
               justify-content: center;
               align-items: center;
               border: 1px solid #d6d3ce;
-              width: 1rem;
-              height: 1rem;
+              width: 1.35rem;
+              height: 1.35rem;
               font-size: 0.875rem;
               font-weight: 700;
+              cursor: pointer;
 
               > .radio {
                 display: none;
@@ -128,7 +196,7 @@
         padding-bottom: 5rem;
 
         > .screen-bar {
-          margin-top: 2rem;
+          margin-top: 1rem;
           margin-bottom: 4rem;
           width: 40rem;
           background-color: #d4d3c9;
@@ -138,12 +206,18 @@
         > .screen {
           th, td {
             text-align: center;
-            background-color: #d4d3c9;
             border: none;
-            width: 1rem;
-            height: 1rem;
+            width: 1.5rem;
+            height: 1.5rem;
             font-size: 0.875rem;
             font-weight: 700;
+            margin-bottom: 4rem;
+
+            &.seat{
+              cursor: pointer;
+              background-color: #d4d3c9;
+
+            }
 
             &.selected-seat {
               background-color: red;
@@ -189,7 +263,7 @@
   }
 
   > .control-bar {
-    width: 100%;
+    width: 100vw;
     background-color: rgb(29, 29, 28);
     height: 6.75rem;
     display: flex;

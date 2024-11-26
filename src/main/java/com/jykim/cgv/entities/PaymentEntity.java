@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Setter
 @Getter
-@EqualsAndHashCode
+@EqualsAndHashCode(of = {"paNum"})
 public class PaymentEntity {
 private int paNum;
 private int paPrice;

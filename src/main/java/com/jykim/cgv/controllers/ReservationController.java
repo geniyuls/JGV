@@ -6,11 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
-@RequestMapping(value = "/seat")
-public class PaymentController {
-    @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
-    public ModelAndView getPayment() {
+@Controller(value = "/")
+public class ReservationController {
+    @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ModelAndView getReservation() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("ticket/index");
         return modelAndView;

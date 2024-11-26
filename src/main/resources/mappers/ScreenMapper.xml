@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jykim.cgv.mappers.ScreenMapper">
+    <insert id="insertScreen">
+        insert into `jgv`.`screen`(`sc_num`, `sc_start`, `mo_num`, `ci_num`)
+        values (#{scNum}, #{scStart}, #{moNum}, #{ciNum});
+    </insert>
+</mapper>
