@@ -14,4 +14,15 @@
                 #{moBookingRate},
                 #{moEnding})
     </insert>
+    <select id="selectMovieByMoNum" resultType="com.jykim.cgv.entities.MovieEntity">
+        select `mo_num` as `moNum`,
+               `mo_title` as `moTitle`,
+               `mo_date` as `moDate`,
+               `mo_time` as `moTime`,
+               `mo_plot` as `moPlot`,
+               `mo_booking_rate` as `moBookingRate`,
+               `mo_ending` as `moEnding`
+        from `jgv`.`movie`
+        where `mo_num` = #{moNum}
+    </select>
 </mapper>

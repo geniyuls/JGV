@@ -7,6 +7,6 @@
     <insert id="insertSeat"  parameterType="com.jykim.cgv.entities.PaymentEntity">
         insert into `jgv`.`seat`
         (`se_num`, `se_name`, `ci_num`)
-        values (${seNum}, ${seName}, ${ciNum})
+        values (#{seNum}, #{seName}, #{ciNum})
     </insert>
 </mapper>

@@ -7,4 +7,13 @@
         insert into `jgv`.`screen`(`sc_num`, `sc_start`, `mo_num`, `ci_num`)
         values (#{scNum}, #{scStart}, #{moNum}, #{ciNum});
     </insert>
+
+    <select id="selectScreenTypeScNum" resultType="com.jykim.cgv.entities.ScreenEntity">
+        select `sc_num` as scNum,
+               `sc_start` as scStart,
+               `mo_num` as moNum,
+               `ci_num` as ciNum
+        from `jgv`.`screen`
+        where `sc_num` = #{ScNum}
+    </select>
 </mapper>

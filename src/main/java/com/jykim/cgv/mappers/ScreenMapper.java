@@ -6,5 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface ScreenMapper {
+    int insertScreen (ScreenEntity screen);
 
+    ScreenEntity selectScreenTypeScNum(int ScNum);
 }
